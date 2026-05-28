@@ -67,7 +67,7 @@ class GkmasDicePlugin(Star):
                 seed_text = f"，seed={options.seed}" if options.seed is not None else ""
                 yield event.plain_result(
                     f"生成完成：{len(entries)} 个条目，{options.columns} 列，{shuffle_text}{seed_text}\n"
-                    f"字体：{font_info}\n"
+                    # f"字体：{font_info}\n"
                     f"{names}"
                 )
                 yield event.image_result(image_path)
