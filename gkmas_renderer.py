@@ -97,7 +97,7 @@ class DiceImageRenderer:
         color = ch.color if re.fullmatch(r"#[0-9a-fA-F]{6}", ch.color) else "#EAEAEA"
         draw.rectangle([x0, y0, x0 + w - 1, y0 + h - 1], fill=color)
 
-        draw.rectangle([x0, y0, x0 + w - 1, y0 + h - 1], outline="#FFFFFF", width=2)
+        #draw.rectangle([x0, y0, x0 + w - 1, y0 + h - 1], outline="#FFFFFF", width=2)
 
         label = self._label(ch, label_mode)
         draw.text((x0 + 18, y0 + 10), str(idx), font=font_num.font, fill="#000000")
@@ -109,15 +109,29 @@ class DiceImageRenderer:
             try:
                 with Image.open(image_path) as source:
                     portrait = source.convert("RGBA")
+                portrait = self._crop_portrait_bottom(portrait, ch)
                 portrait.thumbnail((portrait_box[2] - portrait_box[0], portrait_box[3] - portrait_box[1]), Image.LANCZOS)
                 px = portrait_box[0] + (portrait_box[2] - portrait_box[0] - portrait.width) // 2
                 py = portrait_box[3] - portrait.height
                 self._paste_image(canvas, portrait, px, py)
                 return
+            except GkmasDiceError:
+                raise
             except Exception as exc:
                 logger.warning(f"角色图片读取失败 {image_path}: {exc}")
 
         self._draw_placeholder(draw, portrait_box, ch, font_num)
+
+    @staticmethod
+    def _crop_portrait_bottom(image, ch: Character):
+        crop_bottom = ch.portrait.crop_bottom
+        if crop_bottom <= 0:
+            return image
+        if crop_bottom >= image.height:
+            raise GkmasDiceError(
+                f"角色 {ch.id} 的 portrait.crop_bottom={crop_bottom} 不能大于等于图片高度 {image.height}。"
+            )
+        return image.crop((0, 0, image.width, image.height - crop_bottom))
 
     @staticmethod
     def _portrait_box(x0: int, y0: int, ch: Character) -> tuple[int, int, int, int]:

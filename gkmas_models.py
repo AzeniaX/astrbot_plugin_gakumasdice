@@ -9,6 +9,7 @@ class PortraitLayout:
     y: int = 0
     width: int = 155
     height: int = 150
+    crop_bottom: int = 0
 
 
 @dataclass(frozen=True)

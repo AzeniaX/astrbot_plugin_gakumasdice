@@ -98,8 +98,16 @@ class GkmasRepository:
         y, y_updated = self._portrait_int(portrait, "y", default.y, cid, positive=False)
         width, width_updated = self._portrait_int(portrait, "width", default.width, cid, positive=True)
         height, height_updated = self._portrait_int(portrait, "height", default.height, cid, positive=True)
-        updated = updated or x_updated or y_updated or width_updated or height_updated
-        return PortraitLayout(x=x, y=y, width=width, height=height), updated
+        crop_bottom, crop_bottom_updated = self._portrait_int(
+            portrait,
+            "crop_bottom",
+            default.crop_bottom,
+            cid,
+            positive=False,
+            minimum=0,
+        )
+        updated = updated or x_updated or y_updated or width_updated or height_updated or crop_bottom_updated
+        return PortraitLayout(x=x, y=y, width=width, height=height, crop_bottom=crop_bottom), updated
 
     @staticmethod
     def _portrait_int(
@@ -109,6 +117,7 @@ class GkmasRepository:
         cid: str,
         *,
         positive: bool,
+        minimum: int | None = None,
     ) -> tuple[int, bool]:
         if key not in portrait:
             portrait[key] = default
@@ -123,6 +132,8 @@ class GkmasRepository:
             raise GkmasDiceError(f"角色 {cid} 的 portrait.{key} 必须是整数。") from exc
         if positive and parsed <= 0:
             raise GkmasDiceError(f"角色 {cid} 的 portrait.{key} 必须大于 0。")
+        if minimum is not None and parsed < minimum:
+            raise GkmasDiceError(f"角色 {cid} 的 portrait.{key} 必须大于等于 {minimum}。")
         if parsed != value:
             portrait[key] = parsed
             return parsed, True
