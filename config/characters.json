@@ -1,0 +1,567 @@
+{
+  "characters": [
+    {
+      "id": "hski",
+      "name_full": "花海咲季",
+      "name_short": "咲季",
+      "aliases": [
+        "hsak",
+        "saki",
+        "咲季",
+        "花海咲季"
+      ],
+      "image": "assets/characters/hski.png",
+      "color": "#F58F92",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "ttmr",
+      "name_full": "月村手毬",
+      "name_short": "手毬",
+      "aliases": [
+        "temari",
+        "tmr",
+        "手毬",
+        "毛球",
+        "月村手毬"
+      ],
+      "image": "assets/characters/ttmr.png",
+      "color": "#BFDDF4",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "fktn",
+      "name_full": "藤田琴音",
+      "name_short": "琴音",
+      "aliases": [
+        "kotone",
+        "ktn",
+        "ことね",
+        "藤田ことね",
+        "藤田琴音",
+        "琴音",
+        "藤田言音",
+        "言音"
+      ],
+      "image": "assets/characters/fktn.png",
+      "color": "#F4F76D",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "amao",
+      "name_full": "有村麻央",
+      "name_short": "麻央",
+      "aliases": [
+        "mao",
+        "麻央",
+        "有村麻央"
+      ],
+      "image": "assets/characters/amao.png",
+      "color": "#E47ADC",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "kllj",
+      "name_full": "葛城莉莉娅",
+      "name_short": "莉莉娅",
+      "aliases": [
+        "lilja",
+        "lly",
+        "llj",
+        "リーリヤ",
+        "葛城リーリヤ",
+        "莉莉娅",
+        "葛城莉莉娅"
+      ],
+      "image": "assets/characters/kllj.png",
+      "color": "#EAFBFF",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "kcna",
+      "name_full": "仓本千奈",
+      "name_short": "千奈",
+      "aliases": [
+        "china",
+        "chn",
+        "cna",
+        "千奈",
+        "倉本千奈",
+        "仓本千奈"
+      ],
+      "image": "assets/characters/kcna.png",
+      "color": "#F6A24B",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "ssmk",
+      "name_full": "紫云清夏",
+      "name_short": "清夏",
+      "aliases": [
+        "sumika",
+        "smk",
+        "清夏",
+        "紫雲清夏",
+        "紫云清夏"
+      ],
+      "image": "assets/characters/ssmk.png",
+      "color": "#8AF346",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "shro",
+      "name_full": "篠泽广",
+      "name_short": "广",
+      "aliases": [
+        "hiro",
+        "hro",
+        "hr",
+        "広",
+        "篠澤広",
+        "篠泽广",
+        "广",
+        "筱泽广"
+      ],
+      "image": "assets/characters/shro.png",
+      "color": "#45C4D0",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "hrnm",
+      "name_full": "姬崎莉波",
+      "name_short": "莉波",
+      "aliases": [
+        "rinami",
+        "rnm",
+        "莉波",
+        "姫崎莉波",
+        "姬崎莉波"
+      ],
+      "image": "assets/characters/hrnm.png",
+      "color": "#F3B7C8",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "hume",
+      "name_full": "花海佑芽",
+      "name_short": "佑芽",
+      "aliases": [
+        "ume",
+        "佑芽",
+        "花海佑芽"
+      ],
+      "image": "assets/characters/hume.png",
+      "color": "#F47E62",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "hmsz",
+      "name_full": "秦谷美铃",
+      "name_short": "美铃",
+      "aliases": [
+        "misuzu",
+        "msz",
+        "美鈴",
+        "秦谷美鈴",
+        "秦谷美铃",
+        "美铃"
+      ],
+      "image": "assets/characters/hmsz.png",
+      "color": "#9EB0D2",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "jsna",
+      "name_full": "十王星南",
+      "name_short": "星南",
+      "aliases": [
+        "sena",
+        "sna",
+        "星南",
+        "十王星南"
+      ],
+      "image": "assets/characters/jsna.png",
+      "color": "#F5C46D",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "atbm",
+      "name_full": "雨夜燕",
+      "name_short": "燕",
+      "aliases": [
+        "tsubame",
+        "tbm",
+        "tubame",
+        "雨夜燕",
+        "燕",
+        "燕子"
+      ],
+      "image": "assets/characters/atbm.png",
+      "color": "#A093F3",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "krnh",
+      "name_full": "贺阳燐羽",
+      "name_short": "燐羽",
+      "aliases": [
+        "rinha",
+        "rnh",
+        "燐羽",
+        "贺阳燐羽",
+        "燐哈",
+        "賀陽燐羽"
+      ],
+      "image": "assets/characters/krnh.png",
+      "color": "#7D6CA2",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "gakp",
+      "name_full": "学P",
+      "name_short": "学P",
+      "aliases": [
+        "gakup",
+        "gkp",
+        "学p"
+      ],
+      "image": "assets/characters/gakp.png",
+      "color": "#FFFFFF",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "hkne",
+      "name_full": "冰渡香名江",
+      "name_short": "香名江",
+      "aliases": [
+        "kanae",
+        "kne",
+        "氷渡香名江",
+        "冰渡香名江",
+        "香名江"
+      ],
+      "image": "assets/characters/hkne.png",
+      "color": "#C6DA7F",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "nasr",
+      "name_full": "根绪亚纱里",
+      "name_short": "亚纱里",
+      "aliases": [
+        "asari",
+        "asr",
+        "根緒亜紗里",
+        "根绪亚纱里",
+        "亚纱里",
+        "あさり",
+        "根緒あさり"
+      ],
+      "image": "assets/characters/nasr.png",
+      "color": "#A5E4C7",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "andk",
+      "name_full": "蓝井抚子",
+      "name_short": "抚子",
+      "aliases": [
+        "nadeshiko",
+        "nadesiko",
+        "ndsk",
+        "蓝井抚子",
+        "藍井撫子",
+        "抚子",
+        "撫子"
+      ],
+      "image": "assets/characters/andk.png",
+      "color": "#FAB3FF",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "sson",
+      "name_full": "白草四音",
+      "name_short": "四音",
+      "aliases": [
+        "shion",
+        "sion",
+        "son",
+        "四音",
+        "白草四音"
+      ],
+      "image": "assets/characters/sson.png",
+      "color": "#E64E75",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "sgka",
+      "name_full": "白草月花",
+      "name_short": "月花",
+      "aliases": [
+        "gekka",
+        "geka",
+        "gka",
+        "白草月花",
+        "月花"
+      ],
+      "image": "assets/characters/sgka.png",
+      "color": "#AD9179",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "myu0",
+      "name_full": "真城优",
+      "name_short": "优",
+      "aliases": [
+        "yuu",
+        "yu",
+        "myuu",
+        "真城优",
+        "优",
+        "優",
+        "真城優"
+      ],
+      "image": "assets/characters/myu0.png",
+      "color": "#9E9CF0",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "jkno",
+      "name_full": "十王邦夫",
+      "name_short": "邦夫",
+      "aliases": [
+        "kunio",
+        "kno",
+        "十王邦夫",
+        "邦夫"
+      ],
+      "image": "assets/characters/jkno.png",
+      "color": "#F6B444",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "ktko",
+      "name_full": "黑井崇男",
+      "name_short": "黑井",
+      "aliases": [
+        "kuroi",
+        "kri",
+        "黑井崇男",
+        "黒井崇男",
+        "黑井",
+        "黒井"
+      ],
+      "image": "assets/characters/ktko.png",
+      "color": "#FFFFFF",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "jrsi",
+      "name_full": "十王龙正",
+      "name_short": "龙正",
+      "aliases": [
+        "ryuusei",
+        "rys",
+        "十王龙正",
+        "龙正",
+        "十王龍正",
+        "龍正"
+      ],
+      "image": "assets/characters/jrsi.png",
+      "color": "#F6B444",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "trvo",
+      "name_full": "Vo教练",
+      "name_short": "Vo教练",
+      "aliases": [
+        "Vo教练",
+        "vo教练",
+        "Vo训练员",
+        "vo训练员",
+        "vot",
+        "VoT",
+        "voT",
+        "votrainer",
+        "votr"
+      ],
+      "image": "assets/characters/trvo.png",
+      "color": "#F2178B",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "trda",
+      "name_full": "Da教练",
+      "name_short": "Da教练",
+      "aliases": [
+        "Da教练",
+        "da教练",
+        "Da训练员",
+        "da训练员",
+        "dat",
+        "DaT",
+        "daT",
+        "datrainer",
+        "datr"
+      ],
+      "image": "assets/characters/trda.png",
+      "color": "#0899F6",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    },
+    {
+      "id": "trvi",
+      "name_full": "Vi教练",
+      "name_short": "Vi教练",
+      "aliases": [
+        "Vi教练",
+        "vi教练",
+        "Vi训练员",
+        "vi训练员",
+        "vit",
+        "ViT",
+        "viT",
+        "vitrainer",
+        "vitr"
+      ],
+      "image": "assets/characters/trvi.png",
+      "color": "#FEB109",
+      "portrait": {
+        "x": 145,
+        "y": 0,
+        "width": 155,
+        "height": 150
+      }
+    }
+  ]
+}

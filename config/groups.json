@@ -1,0 +1,16 @@
+{
+  "groups": [
+    {"id": "reiris", "name": "Re;IRIS", "aliases": ["Re;IRIS", "re;iris", "Re;iris", "Re;Iris","御三家","红绿灯","表御三家","信号机","表三"], "expression": "hski+ttbm+fktn"},
+    {"id": "begrazia", "name": "Begrazia", "aliases": ["Begrazia", "八个垃圾", "里御三家", "里三"], "expression": "hume+hmsz+jsna"},
+    {"id": "syngup", "name": "SyngUp!", "aliases": ["SyngUp", "Syngup"], "expression": "ttmr+hmsz+krnh"},
+    {"id": "1nen1kumi", "name": "一年一班", "aliases": ["一年一班"], "expression": "hski+ttmr+fktn+kllj+ssmk"},
+    {"id": "1nen2kumi", "name": "一年二班", "aliases": ["一年二班"], "expression": "kcna+shro+hume+hmsz"},
+    {"id": "grade3", "name": "三年生", "aliases": ["三年一班", "三年组", "三年生", "三年级"], "expression": "amao+hrnm+jsna+atbm"},
+    {"id": "grade1", "name": "一年生", "aliases": ["一年生"], "expression": "hski+ttmr+fktn+kllj+ssmk+kcna+shro+hume+hmsz"},
+    {"id": "13idols", "name": "初星偶像", "aliases": ["13idol", "初星学园", "初星13", "13偶像", "hatsuboshi"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm"},
+    {"id": "14idols", "name": "初星+燐羽", "aliases": ["14idol", "14偶像"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm+krnh"},
+    {"id": "gokugetsu", "name": "极月偶像", "aliases": ["极月学园", "极月"], "expression": "krnh+andk+sson+sgka"},
+    {"id": "trainers", "name": "三教练", "aliases": ["三训练员", "三教练"], "expression": "trvo+trda+trvi"},
+    {"id": "all", "name": "全员", "aliases": ["全员"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm+krnh+myu0+nasr+hkne+andk+sson+sgka+trvo+trda+trvi+jkno+jrsi+ktko+gakp"}
+  ]
+}
