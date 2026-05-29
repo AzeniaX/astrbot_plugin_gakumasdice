@@ -101,7 +101,7 @@ class DiceImageRenderer:
 
         label = self._label(ch, label_mode)
         draw.text((x0 + 18, y0 + 10), str(idx), font=font_num.font, fill="#000000")
-        self._draw_fit_text(draw, label, x0 + 16, y0 + 76, 140, font_name.font, font_small.font)
+        self._draw_fit_text(draw, label, x0 + 16, y0 + 76, 180, font_name.font, font_small.font)
 
         portrait_box = self._portrait_box(x0, y0, ch)
         image_path = self.repo.character_image_path(ch)

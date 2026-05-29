@@ -144,9 +144,35 @@ class GkmasCommandService:
         return "\n".join(lines)
 
     def handle_daily_idol(self, user_key: str) -> tuple[bool, str, str]:
+        return self._handle_daily_claim(
+            user_key,
+            result_key="results",
+            group_expression=self.repo.daily_idol_group,
+            empty_error="daily_idol.json 配置的今日小偶像组合中没有可抽取的角色。",
+        )
+
+    def handle_daily_nunu(self, user_key: str) -> tuple[bool, str, str]:
+        return self._handle_daily_claim(
+            user_key,
+            result_key="nunu_results",
+            group_expression=self.repo.daily_nunu_group,
+            empty_error="daily_idol.json 配置的今日努努组合中没有可抽取的角色。",
+        )
+
+    def _handle_daily_claim(
+        self,
+        user_key: str,
+        *,
+        result_key: str,
+        group_expression: str,
+        empty_error: str,
+    ) -> tuple[bool, str, str]:
         today = date.today().isoformat()
         state = self._load_daily_idol_state(today)
-        results = state["results"]
+        results = state.setdefault(result_key, {})
+        if not isinstance(results, dict):
+            results = {}
+            state[result_key] = results
 
         saved = results.get(user_key)
         if isinstance(saved, dict):
@@ -159,7 +185,7 @@ class GkmasCommandService:
             if name and image:
                 return True, name, image
 
-        entries = self._daily_idol_candidates()
+        entries = self._daily_candidates(group_expression, empty_error)
         cid = random.choice(entries)
         ch = self.repo.characters[cid]
         name = ch.name_full
@@ -172,8 +198,8 @@ class GkmasCommandService:
         self._save_daily_idol_state(state)
         return False, name, image
 
-    def _daily_idol_candidates(self) -> list[str]:
-        entries = self.parser.parse(self.repo.daily_idol_group)
+    def _daily_candidates(self, group_expression: str, empty_error: str) -> list[str]:
+        entries = self.parser.parse(group_expression)
         unique_entries = []
         seen = set()
         for cid in entries:
@@ -184,12 +210,12 @@ class GkmasCommandService:
             unique_entries.append(cid)
             seen.add(cid)
         if not unique_entries:
-            raise GkmasDiceError("daily_idol.json 配置的组合中没有可抽取的角色。")
+            raise GkmasDiceError(empty_error)
         return unique_entries
 
     def _load_daily_idol_state(self, today: str) -> dict:
         if not self.daily_idol_results_path.exists():
-            return {"date": today, "results": {}}
+            return {"date": today, "results": {}, "nunu_results": {}}
 
         try:
             data = json.loads(self.daily_idol_results_path.read_text(encoding="utf-8"))
@@ -197,9 +223,11 @@ class GkmasCommandService:
             raise GkmasDiceError(f"每日小偶像记录读取失败：{exc}") from exc
 
         if not isinstance(data, dict) or data.get("date") != today:
-            return {"date": today, "results": {}}
+            return {"date": today, "results": {}, "nunu_results": {}}
         if not isinstance(data.get("results"), dict):
-            return {"date": today, "results": {}}
+            data["results"] = {}
+        if not isinstance(data.get("nunu_results"), dict):
+            data["nunu_results"] = {}
         return data
 
     def _save_daily_idol_state(self, state: dict) -> None:

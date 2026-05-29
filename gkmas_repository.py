@@ -22,6 +22,7 @@ class GkmasRepository:
         self.characters: dict[str, Character] = {}
         self.groups: dict[str, GroupDef] = {}
         self.daily_idol_group = "hatsuboshi"
+        self.daily_nunu_group = "hatsuboshi"
         self.char_alias: dict[str, str] = {}
         self.group_alias: dict[str, str] = {}
 
@@ -171,10 +172,15 @@ class GkmasRepository:
         if not isinstance(data, dict):
             raise GkmasDiceError(f"配置文件格式错误：{self.daily_idol_path.name} 必须是对象。")
 
-        group = str(data.get("group") or data.get("expression") or "").strip()
-        if not group:
-            raise GkmasDiceError("daily_idol.json 中 group 不能为空。")
-        self.daily_idol_group = group
+        legacy_group = str(data.get("group") or data.get("expression") or "").strip()
+        idol_group = str(data.get("daily_idol_group") or data.get("idol_group") or legacy_group).strip()
+        nunu_group = str(data.get("daily_nunu_group") or data.get("nunu_group") or idol_group).strip()
+        if not idol_group:
+            raise GkmasDiceError("daily_idol.json 中 daily_idol_group 不能为空。")
+        if not nunu_group:
+            raise GkmasDiceError("daily_idol.json 中 daily_nunu_group 不能为空。")
+        self.daily_idol_group = idol_group
+        self.daily_nunu_group = nunu_group
 
     def _add_alias(self, alias_map: dict[str, str], alias: str, target: str, kind: str) -> None:
         key = self._norm(alias)

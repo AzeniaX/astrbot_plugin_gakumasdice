@@ -11,6 +11,7 @@
     {"id": "14idols", "name": "初星+燐羽", "aliases": ["14idol", "14偶像"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm+krnh"},
     {"id": "gokugetsu", "name": "极月偶像", "aliases": ["极月学园", "极月"], "expression": "krnh+andk+sson+sgka"},
     {"id": "trainers", "name": "三教练", "aliases": ["三训练员", "三教练"], "expression": "trvo+trda+trvi"},
-    {"id": "all", "name": "全员", "aliases": ["全员"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm+krnh+myu0+nasr+hkne+andk+sson+sgka+trvo+trda+trvi+jkno+jrsi+ktko+gakp"}
+    {"id": "all", "name": "全员", "aliases": ["全员"], "expression": "hski+ttmr+fktn+amao+kllj+kcna+ssmk+shro+hrnm+hume+hmsz+jsna+atbm+krnh+myu0+nasr+hkne+andk+sson+sgka+trvo+trda+trvi+jkno+jrsi+ktko+gakp"},
+    {"id": "allchibinui", "name": "努努全员", "aliases": ["13nui", "chibigurumi", "allnui", "13努努", "全努努","13努"], "expression": "hskinui+ttmrnui+fktnnui+amaonui+klljnui+kcnanui+ssmknui+shronui+hrnmnui+humenui+hmsznui+jsnanui+atbmnui"}
   ]
 }

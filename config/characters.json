@@ -589,6 +589,321 @@
         "height": 150,
         "crop_bottom": 100
       }
+    },
+    {
+      "id": "hskinui",
+      "name_full": "咲季努努",
+      "name_short": "咲季努",
+      "aliases": [
+        "hsaknui",
+        "sakinui",
+        "skinui",
+        "さきぬい",
+        "咲季ぬい",
+        "咲季努努",
+        "咲季努",
+        "花海咲季努努"
+      ],
+      "image": "assets/chibinui/hskinui.png",
+      "color": "#F58F92",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "ttmrnui",
+      "name_full": "手毬努努",
+      "name_short": "毬努",
+      "aliases": [
+        "temarinui",
+        "tmrnui",
+        "てまぬい",
+        "てまりぬい",
+        "手毬ぬい",
+        "毛球努",
+        "毬努",
+        "手毬努努",
+        "手毬努",
+        "月村手毬努努"
+      ],
+      "image": "assets/chibinui/ttmrnui.png",
+      "color": "#BFDDF4",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "fktnnui",
+      "name_full": "琴音努努",
+      "name_short": "琴音努",
+      "aliases": [
+        "kotonenui",
+        "ktnnui",
+        "ことねぬい",
+        "ことぬい",
+        "藤田ことねぬい",
+        "藤田琴音努努",
+        "琴音努努",
+        "琴音努",
+        "藤田言音努",
+        "言音努"
+      ],
+      "image": "assets/chibinui/fktnnui.png",
+      "color": "#F4F76D",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "amaonui",
+      "name_full": "麻央努努",
+      "name_short": "麻央努",
+      "aliases": [
+        "maonui",
+        "麻央努",
+        "有村麻央努努",
+        "麻央努努",
+        "まおぬい"
+      ],
+      "image": "assets/chibinui/amaonui.png",
+      "color": "#E47ADC",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "klljnui",
+      "name_full": "莉莉娅努努",
+      "name_short": "莉莉娅努",
+      "aliases": [
+        "liljanui",
+        "llynui",
+        "lljnui",
+        "リーリヤぬい",
+        "りーりやぬい",
+        "葛城リーリヤぬい",
+        "莉莉娅努",
+        "葛城莉莉娅努努",
+        "Lilja努"
+      ],
+      "image": "assets/chibinui/klljnui.png",
+      "color": "#EAFBFF",
+      "portrait": {
+        "x": 130,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "kcnanui",
+      "name_full": "千奈努努",
+      "name_short": "千奈努",
+      "aliases": [
+        "chinanui",
+        "chnnui",
+        "cnanui",
+        "千奈ぬい",
+        "ちなぬい",
+        "倉本千奈ぬい",
+        "仓本千奈努努",
+        "千奈努努",
+        "千奈努"
+      ],
+      "image": "assets/chibinui/kcnanui.png",
+      "color": "#F6A24B",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "ssmknui",
+      "name_full": "清夏努努",
+      "name_short": "清夏努",
+      "aliases": [
+        "sumikanui",
+        "smknui",
+        "清夏ぬい",
+        "すみかぬい",
+        "清夏努努",
+        "清夏努",
+        "紫雲清夏ぬい",
+        "紫云清夏努努"
+      ],
+      "image": "assets/chibinui/ssmknui.png",
+      "color": "#8AF346",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "shronui",
+      "name_full": "广努努",
+      "name_short": "广努",
+      "aliases": [
+        "hironui",
+        "hronui",
+        "hrnui",
+        "広ぬい",
+        "ひろぬい",
+        "篠澤広ぬい",
+        "篠泽广努努",
+        "广努努",
+        "广努",
+        "筱泽广努努"
+      ],
+      "image": "assets/chibinui/shronui.png",
+      "color": "#45C4D0",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "hrnmnui",
+      "name_full": "莉波努努",
+      "name_short": "莉波努",
+      "aliases": [
+        "rinaminui",
+        "rnmnui",
+        "rinanui",
+        "莉波ぬい",
+        "りなみぬい",
+        "莉波努努",
+        "莉波努",
+        "姬崎莉波努努"
+      ],
+      "image": "assets/chibinui/hrnmnui.png",
+      "color": "#F3B7C8",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "humenui",
+      "name_full": "佑芽努努",
+      "name_short": "佑芽努",
+      "aliases": [
+        "umenui",
+        "うめぬい",
+        "佑芽ぬい",
+        "佑芽努努",
+        "佑芽努",
+        "花海佑芽努努"
+      ],
+      "image": "assets/chibinui/humenui.png",
+      "color": "#F47E62",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "hmsznui",
+      "name_full": "美铃努努",
+      "name_short": "美铃努",
+      "aliases": [
+        "misuzunui",
+        "msznui",
+        "misunui",
+        "美鈴ぬい",
+        "みすずぬい",
+        "みすぬい",
+        "秦谷美鈴ぬい",
+        "秦谷美铃努努",
+        "美铃努努",
+        "美铃努"
+      ],
+      "image": "assets/chibinui/hmsznui.png",
+      "color": "#9EB0D2",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "jsnanui",
+      "name_full": "星南努努",
+      "name_short": "星南努",
+      "aliases": [
+        "senanui",
+        "snanui",
+        "せなぬい",
+        "星南ぬい",
+        "星南努",
+        "星南努努",
+        "十王星南努"
+      ],
+      "image": "assets/chibinui/jsnanui.png",
+      "color": "#F5C46D",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
+    },
+    {
+      "id": "atbmnui",
+      "name_full": "燕努努",
+      "name_short": "燕努",
+      "aliases": [
+        "tsubamenui",
+        "tbmnui",
+        "tubamenui",
+        "燕努努",
+        "燕努",
+        "燕ぬい",
+        "つばめぬい"
+      ],
+      "image": "assets/chibinui/atbmnui.png",
+      "color": "#A093F3",
+      "portrait": {
+        "x": 120,
+        "y": 0,
+        "width": 180,
+        "height": 150,
+        "crop_bottom": 0
+      }
     }
   ]
 }

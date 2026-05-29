@@ -32,5 +32,7 @@ DEFAULT_GROUPS = {
 }
 
 DEFAULT_DAILY_IDOL_CONFIG = {
-    "group": "hatsuboshi"
+    "group": "hatsuboshi",
+    "daily_idol_group": "hatsuboshi",
+    "daily_nunu_group": "hatsuboshi",
 }
