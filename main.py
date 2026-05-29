@@ -47,6 +47,24 @@ class GkmasDicePlugin(Star):
         self.repo.load()
         logger.info("gkmasdice initialized")
 
+    @filter.command("今日小偶像")
+    async def daily_idol(self, event: AstrMessageEvent):
+        """每日随机认领一位担当偶像。"""
+        try:
+            sender_id = str(event.get_sender_id() or "").strip()
+            user_key = f"{event.get_platform_id()}:{sender_id}" if sender_id else event.unified_msg_origin
+            already_claimed, name, image_path = self.commands.handle_daily_idol(user_key)
+            if already_claimed:
+                yield event.plain_result(f"抱歉，您已经认领过今天的担当偶像了哦～\n您今天的担当偶像为——{name}")
+            else:
+                yield event.plain_result(f"制作人，您今天的担当偶像为——{name}")
+            yield event.image_result(image_path)
+        except GkmasDiceError as exc:
+            yield event.plain_result(f"今日小偶像错误：{exc}")
+        except Exception as exc:
+            logger.exception("daily idol unexpected error")
+            yield event.plain_result(f"今日小偶像内部错误：{exc}")
+
     @filter.command("gkmasdice", alias={"gk骰", "学马骰"})
     async def gkmasdice(self, event: AstrMessageEvent):
         """学园偶像大师掷骰图生成。用法：/gkmasdice 掷骰图生成 saki+tmr --shuffle --seed 1"""

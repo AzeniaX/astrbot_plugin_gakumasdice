@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import json
+import random
 import shlex
+from datetime import date
 
 from gkmas_errors import GkmasDiceError
 from gkmas_expression import ExpressionParser
@@ -12,6 +15,7 @@ class GkmasCommandService:
     def __init__(self, repo: GkmasRepository, parser: ExpressionParser):
         self.repo = repo
         self.parser = parser
+        self.daily_idol_results_path = self.repo.base_dir / "data" / "daily_idol_results.json"
 
     def extract_args(self, message: str) -> list[str]:
         text = message.strip()
@@ -138,3 +142,69 @@ class GkmasCommandService:
             aliases = "、".join(group.aliases)
             lines.append(f"- {group.id}: {group.name} 别名：{aliases} 表达式：{group.expression}")
         return "\n".join(lines)
+
+    def handle_daily_idol(self, user_key: str) -> tuple[bool, str, str]:
+        today = date.today().isoformat()
+        state = self._load_daily_idol_state(today)
+        results = state["results"]
+
+        saved = results.get(user_key)
+        if isinstance(saved, dict):
+            name = str(saved.get("name") or "").strip()
+            image = str(saved.get("image") or "").strip()
+            cid = str(saved.get("character_id") or "").strip()
+            if cid and cid in self.repo.characters:
+                ch = self.repo.characters[cid]
+                return True, ch.name_full, str(self.repo.character_image_path(ch))
+            if name and image:
+                return True, name, image
+
+        entries = self._daily_idol_candidates()
+        cid = random.choice(entries)
+        ch = self.repo.characters[cid]
+        name = ch.name_full
+        image = str(self.repo.character_image_path(ch))
+        results[user_key] = {
+            "character_id": cid,
+            "name": name,
+            "image": image,
+        }
+        self._save_daily_idol_state(state)
+        return False, name, image
+
+    def _daily_idol_candidates(self) -> list[str]:
+        entries = self.parser.parse(self.repo.daily_idol_group)
+        unique_entries = []
+        seen = set()
+        for cid in entries:
+            if cid in seen:
+                continue
+            if cid not in self.repo.characters:
+                continue
+            unique_entries.append(cid)
+            seen.add(cid)
+        if not unique_entries:
+            raise GkmasDiceError("daily_idol.json 配置的组合中没有可抽取的角色。")
+        return unique_entries
+
+    def _load_daily_idol_state(self, today: str) -> dict:
+        if not self.daily_idol_results_path.exists():
+            return {"date": today, "results": {}}
+
+        try:
+            data = json.loads(self.daily_idol_results_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise GkmasDiceError(f"每日小偶像记录读取失败：{exc}") from exc
+
+        if not isinstance(data, dict) or data.get("date") != today:
+            return {"date": today, "results": {}}
+        if not isinstance(data.get("results"), dict):
+            return {"date": today, "results": {}}
+        return data
+
+    def _save_daily_idol_state(self, state: dict) -> None:
+        self.daily_idol_results_path.parent.mkdir(parents=True, exist_ok=True)
+        self.daily_idol_results_path.write_text(
+            json.dumps(state, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )

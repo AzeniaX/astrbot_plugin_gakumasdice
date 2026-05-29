@@ -30,3 +30,7 @@ DEFAULT_GROUPS = {
         {"id": "support", "name": "支援组", "aliases": ["supporters", "支援"], "expression": "ume+misuzu+sena"},
     ]
 }
+
+DEFAULT_DAILY_IDOL_CONFIG = {
+    "group": "hatsuboshi"
+}

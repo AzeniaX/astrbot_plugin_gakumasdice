@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from gkmas_defaults import DEFAULT_CHARACTERS, DEFAULT_GROUPS
+from gkmas_defaults import DEFAULT_CHARACTERS, DEFAULT_DAILY_IDOL_CONFIG, DEFAULT_GROUPS
 from gkmas_errors import GkmasDiceError
 from gkmas_models import Character, GroupDef, PortraitLayout
 
@@ -18,8 +18,10 @@ class GkmasRepository:
         self.assets_dir = base_dir / "assets" / "characters"
         self.characters_path = self.config_dir / "characters.json"
         self.groups_path = self.config_dir / "groups.json"
+        self.daily_idol_path = self.config_dir / "daily_idol.json"
         self.characters: dict[str, Character] = {}
         self.groups: dict[str, GroupDef] = {}
+        self.daily_idol_group = "hatsuboshi"
         self.char_alias: dict[str, str] = {}
         self.group_alias: dict[str, str] = {}
 
@@ -27,6 +29,7 @@ class GkmasRepository:
         self._ensure_default_files()
         self._load_characters()
         self._load_groups()
+        self._load_daily_idol_config()
         self._build_alias_maps()
 
     def _ensure_default_files(self) -> None:
@@ -41,6 +44,11 @@ class GkmasRepository:
         if not self.groups_path.exists():
             self.groups_path.write_text(
                 json.dumps(DEFAULT_GROUPS, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        if not self.daily_idol_path.exists():
+            self.daily_idol_path.write_text(
+                json.dumps(DEFAULT_DAILY_IDOL_CONFIG, ensure_ascii=False, indent=2),
                 encoding="utf-8",
             )
 
@@ -153,6 +161,20 @@ class GkmasRepository:
             if not expression:
                 raise GkmasDiceError(f"组合 {gid} 没有 expression。")
             self.groups[gid] = GroupDef(gid, name, aliases, expression)
+
+    def _load_daily_idol_config(self) -> None:
+        try:
+            data = json.loads(self.daily_idol_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise GkmasDiceError(f"配置文件读取失败：{self.daily_idol_path.name}：{exc}") from exc
+
+        if not isinstance(data, dict):
+            raise GkmasDiceError(f"配置文件格式错误：{self.daily_idol_path.name} 必须是对象。")
+
+        group = str(data.get("group") or data.get("expression") or "").strip()
+        if not group:
+            raise GkmasDiceError("daily_idol.json 中 group 不能为空。")
+        self.daily_idol_group = group
 
     def _add_alias(self, alias_map: dict[str, str], alias: str, target: str, kind: str) -> None:
         key = self._norm(alias)
