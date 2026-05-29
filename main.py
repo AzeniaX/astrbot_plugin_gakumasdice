@@ -23,6 +23,7 @@ for module_name in (
 from astrbot.api import logger
 from astrbot.api.event import AstrMessageEvent, filter
 from astrbot.api.star import Context, Star, register
+from astrbot.core.message.components import Image, Plain
 
 from gkmas_commands import GkmasCommandService
 from gkmas_errors import GkmasDiceError
@@ -55,10 +56,10 @@ class GkmasDicePlugin(Star):
             user_key = f"{event.get_platform_id()}:{sender_id}" if sender_id else event.unified_msg_origin
             already_claimed, name, image_path = self.commands.handle_daily_idol(user_key)
             if already_claimed:
-                yield event.plain_result(f"抱歉，您已经认领过今天的担当偶像了哦～\n您今天的担当偶像为——{name}")
+                text = f"抱歉，您已经认领过今天的担当偶像了哦～\n您今天的担当偶像为——{name}"
             else:
-                yield event.plain_result(f"制作人，您今天的担当偶像为——{name}")
-            yield event.image_result(image_path)
+                text = f"制作人，您今天的担当偶像为——{name}"
+            yield event.chain_result([Plain(text), Image.fromFileSystem(image_path)])
         except GkmasDiceError as exc:
             yield event.plain_result(f"今日小偶像错误：{exc}")
         except Exception as exc:
@@ -83,12 +84,12 @@ class GkmasDicePlugin(Star):
                 names = "、".join(self.repo.characters[cid].name_full for cid in entries)
                 shuffle_text = "已打乱" if options.shuffle else "未打乱"
                 seed_text = f"，seed={options.seed}" if options.seed is not None else ""
-                yield event.plain_result(
+                text = (
                     f"生成完成：{len(entries)} 个条目，{options.columns} 列，{shuffle_text}{seed_text}\n"
                     # f"字体：{font_info}\n"
                     f"{names}"
                 )
-                yield event.image_result(image_path)
+                yield event.chain_result([Plain(text), Image.fromFileSystem(image_path)])
                 return
 
             if subcmd in {"角色列表", "chars", "characters"}:
